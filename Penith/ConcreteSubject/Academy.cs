@@ -8,10 +8,15 @@ namespace Penith.ConcreteSubject
 {
     //public delegate void NotifyHandler();
     public delegate void EventHandler(object sender, EventArgs e);
-    public class Academy : INotifyMessageChanged //Concrete sub
+    public class Academy //Concrete sub
     {
         //private List<IObserver> students = new List<IObserver>();
-        public event EventHandler<EventArgs> MessageChanged;
+        private EventHandler messageChanged;
+        public event EventHandler MessageChanged
+        { 
+            add { messageChanged += value; } 
+            remove { messageChanged -= value; } 
+        }
 
         private string name = "";
 
@@ -37,7 +42,7 @@ namespace Penith.ConcreteSubject
              set
              {
                  message = value;
-                OnMessageChanged();
+                this.OnMessageChanged();
              }
          }
         public Academy(string name, string adress)
@@ -46,6 +51,7 @@ namespace Penith.ConcreteSubject
             this.Adress = adress;
         }
         
+
         /*public void Attach(IObserver o)
         {
             MessageChanged += o.Update;
@@ -56,8 +62,8 @@ namespace Penith.ConcreteSubject
         }*/
         public void OnMessageChanged()
         {
-            if (MessageChanged != null)
-            MessageChanged.Invoke();
+            if (messageChanged != null)
+                messageChanged(this, null);
         }
 
     }
