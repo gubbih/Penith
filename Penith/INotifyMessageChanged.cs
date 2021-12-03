@@ -9,7 +9,7 @@ namespace Penith
     
     public interface INotifyMessageChanged
     {
-        public event EventHandler MessageChanged;
+        //public event EventHandler MessageChanged;
 
     }
 }

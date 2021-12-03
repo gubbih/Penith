@@ -19,7 +19,7 @@ namespace Penith // Note: actual namespace depends on the project name.
 
             p.MessageChanged += s1.Update;
             p.MessageChanged += s2.Update;
-            p.MessageChanged = null;
+            p.MessageChanged += null;
             p.MessageChanged += s3.Update;
 
             p.Message = "Så er der julefrokost!";

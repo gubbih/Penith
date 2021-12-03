@@ -42,7 +42,7 @@ namespace Penith.ConcreteSubject
              set
              {
                  message = value;
-                this.OnMessageChanged();
+                 messageChanged(this,null);
              }
          }
         public Academy(string name, string adress)
@@ -50,7 +50,6 @@ namespace Penith.ConcreteSubject
             this.Name = name;
             this.Adress = adress;
         }
-        
 
         /*public void Attach(IObserver o)
         {

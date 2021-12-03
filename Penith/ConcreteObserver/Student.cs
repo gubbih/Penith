@@ -45,7 +45,7 @@ namespace Penith.ConcreteObserver
             this.academy = academy;
             this.name = name;
         }
-        public void Update()
+        public void Update(object sender, EventArgs e)
         {
             Academy thisAcadamy = academy as Academy;
             message = thisAcadamy.Message;
