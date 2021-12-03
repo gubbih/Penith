@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Penith
 {
     public interface ISubject
-    {
+    {/*
         //private List<IObserver> observers = new List<IObserver>();
         public void Attach(IObserver o)
         {
@@ -17,7 +17,7 @@ namespace Penith
         public void Detach(IObserver o)
         {
             //observers.Add(o);
-        }
+        }*/
         public void Notify()
         {
             //foreach (IObserver o in observers)

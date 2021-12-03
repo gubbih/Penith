@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Penith.ConcreteSubject
 {
-    public delegate void NotifyHandler();
-    public class Academy : ISubject //Concrete sub
+    //public delegate void NotifyHandler();
+    public delegate void EventHandler(object sender, EventArgs e);
+    public class Academy : INotifyMessageChanged //Concrete sub
     {
         //private List<IObserver> students = new List<IObserver>();
-        private NotifyHandler students;
-        public NotifyHandler Students { get; set; }
+        public event EventHandler<EventArgs> MessageChanged;
 
         private string name = "";
 
@@ -37,7 +37,7 @@ namespace Penith.ConcreteSubject
              set
              {
                  message = value;
-                 Notify();
+                OnMessageChanged();
              }
          }
         public Academy(string name, string adress)
@@ -46,18 +46,18 @@ namespace Penith.ConcreteSubject
             this.Adress = adress;
         }
         
-        public void Attach(IObserver o)
+        /*public void Attach(IObserver o)
         {
-            students += o.Update;
+            MessageChanged += o.Update;
         }
         public void Detach(IObserver o)
         {
-            students -= o.Update;
-
-        }
-        public void Notify()
+            MessageChanged -= o.Update;
+        }*/
+        public void OnMessageChanged()
         {
-            students.Invoke();
+            if (MessageChanged != null)
+            MessageChanged.Invoke();
         }
 
     }

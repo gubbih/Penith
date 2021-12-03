@@ -9,8 +9,8 @@ namespace Penith.ConcreteObserver
 {
     public class Student:IObserver // Concrete observer
     {
-        private ISubject academy;
-
+        //private ISubject academy;
+        private Academy academy;
 
         private string message = "";
 
@@ -34,13 +34,13 @@ namespace Penith.ConcreteObserver
             set { acaName = value; }
         }
 
-        public Student(ISubject academy, string name, string acaName)
+        public Student(Academy academy, string name, string acaName)
         {
             this.academy = academy;
             this.name = name;
             this.acaName = acaName;
         }
-        public Student(ISubject academy, string name)
+        public Student(Academy academy, string name)
         {
             this.academy = academy;
             this.name = name;

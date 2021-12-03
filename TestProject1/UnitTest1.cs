@@ -6,7 +6,7 @@ namespace TestProject1
     [TestClass]
     public class UnitTest1
     {
-        ConcreteSubject cSubject;
+        /*ConcreteSubject cSubject;
         ConcreteObserver cObserver1, cObserver2, cObserver3;
 
         [TestInitialize]
@@ -41,7 +41,7 @@ namespace TestProject1
             Assert.AreEqual(42, cObserver1.State);
             Assert.AreEqual(25, cObserver2.State);
             Assert.AreEqual(42, cObserver3.State);
-        }
+        }*/
     }
 
 }
