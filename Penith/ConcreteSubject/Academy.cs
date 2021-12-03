@@ -19,6 +19,7 @@ namespace Penith.ConcreteSubject
         {
             get { return name; }
             set { name = value; }
+            
         }
         private string adress;
 
@@ -27,7 +28,6 @@ namespace Penith.ConcreteSubject
             get { return adress; }
             set { adress = value; }
         }
-
 
         private string message;
 
@@ -48,19 +48,16 @@ namespace Penith.ConcreteSubject
         
         public void Attach(IObserver o)
         {
-            this.students.Add(o);
-            students = o;
+            students += o.Update;
         }
         public void Detach(IObserver o)
         {
-            this.students.Remove(o);
+            students -= o.Update;
+
         }
         public void Notify()
         {
-            foreach (IObserver o in students)
-            {
-                o.Update();
-            }
+            students.Invoke();
         }
 
     }
