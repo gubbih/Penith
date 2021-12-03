@@ -8,7 +8,7 @@ namespace Penith.ConcreteSubject
 {
     //public delegate void NotifyHandler();
     public delegate void EventHandler(object sender, EventArgs e);
-    public class Academy //Concrete sub
+    public class Academy : INotifyMessageChanged //Concrete sub
     {
         //private List<IObserver> students = new List<IObserver>();
         private EventHandler messageChanged;
